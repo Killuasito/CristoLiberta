@@ -19,58 +19,14 @@ const Events = () => {
   const events = [
     {
       id: 1,
-      title: "Culto Especial de Adoração",
-      date: "2023-12-24",
+      title: "Culto de Mulheres",
+      date: "2025-03-29",
       time: "18:00",
-      location: "Templo Principal",
+      location: "Igreja Cristo Liberta",
       description:
-        "Um momento especial de conexão com Deus através de louvor e adoração.",
-      image: "/event1.jpg",
+        "Um culto especial para mulheres, cheio de fé, louvor e inspiração. Venha se fortalecer em Deus e em nossa união",
+      image: "https://i.postimg.cc/qMz6nLJJ/PHOTO-2025-03-02-16-56-26.jpg",
       category: "Culto",
-    },
-    {
-      id: 2,
-      title: "Retiro de Jovens",
-      date: "2024-01-15",
-      time: "09:00",
-      location: "Chácara Recanto da Paz",
-      description:
-        "Um fim de semana dedicado ao crescimento espiritual e comunhão entre os jovens da igreja.",
-      image: "/event2.jpg",
-      category: "Retiro",
-    },
-    {
-      id: 3,
-      title: "Escola Bíblica de Férias",
-      date: "2024-01-22",
-      time: "14:00",
-      location: "Área Infantil",
-      description:
-        "Um programa especial para crianças aprenderem sobre a Bíblia de maneira divertida e interativa.",
-      image: "/event3.jpg",
-      category: "Infantil",
-    },
-    {
-      id: 4,
-      title: "Seminário de Liderança",
-      date: "2024-02-05",
-      time: "19:30",
-      location: "Sala de Conferências",
-      description:
-        "Treinamento especial para líderes e pessoas interessadas em desenvolver habilidades de liderança cristã.",
-      image: "/event4.jpg",
-      category: "Seminário",
-    },
-    {
-      id: 5,
-      title: "Ação Social na Comunidade",
-      date: "2024-02-18",
-      time: "09:00",
-      location: "Bairro Jardim Esperança",
-      description:
-        "Distribuição de alimentos e serviços gratuitos para a comunidade local.",
-      image: "/event5.jpg",
-      category: "Social",
     },
   ];
 
@@ -101,10 +57,8 @@ const Events = () => {
     return matchesSearch && matchesCategory;
   });
 
-  // Evento em destaque (primeiro da lista)
-  const featuredEvent = events[0];
-  // Eventos restantes
-  const regularEvents = filteredEvents.slice(1);
+  // Remover a separação de evento em destaque
+  // Os eventos filtrados serão todos mostrados na lista regular
 
   return (
     <div
@@ -195,101 +149,6 @@ const Events = () => {
           </div>
         </div>
 
-        {/* Featured Event */}
-        <div className="mb-16">
-          <div>
-            <h2
-              className={`text-3xl font-bold mb-8 ${
-                isDark ? "text-white" : "text-gray-800"
-              }`}
-            >
-              Evento em <span className="text-[#FF6B00]">Destaque</span>
-            </h2>
-          </div>
-
-          <div
-            className={`overflow-hidden rounded-2xl ${
-              isDark ? "bg-[#141E3C]" : "bg-white"
-            } shadow-xl`}
-          >
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="h-64 md:h-auto overflow-hidden relative">
-                <div
-                  className={`absolute inset-0 bg-black/50 flex items-center justify-center ${
-                    isDark ? "bg-opacity-70" : "bg-opacity-40"
-                  }`}
-                >
-                  <div className="text-center p-8">
-                    <h3 className="text-3xl font-bold text-white mb-4">
-                      {featuredEvent.title}
-                    </h3>
-                    <div className="flex justify-center gap-4">
-                      <span className="bg-[#FF6B00] text-white px-4 py-2 rounded-full text-sm font-medium">
-                        {featuredEvent.category}
-                      </span>
-                      <span className="bg-white text-[#FF6B00] px-4 py-2 rounded-full text-sm font-medium">
-                        Em destaque
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <img
-                  src="/event-placeholder.jpg"
-                  alt={featuredEvent.title}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://images.unsplash.com/photo-1555708982-8645ec9ce3cc?q=80&w=1000";
-                  }}
-                />
-              </div>
-              <div className="p-8 flex flex-col justify-between">
-                <div>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
-                    <div
-                      className={`flex items-center ${
-                        isDark ? "text-gray-300" : "text-gray-600"
-                      }`}
-                    >
-                      <FaCalendarAlt className="mr-2 text-[#FF6B00]" />
-                      <span>{formatDate(featuredEvent.date)}</span>
-                    </div>
-                    <div
-                      className={`flex items-center ${
-                        isDark ? "text-gray-300" : "text-gray-600"
-                      }`}
-                    >
-                      <FaClock className="mr-2 text-[#FF6B00]" />
-                      <span>{featuredEvent.time}</span>
-                    </div>
-                  </div>
-
-                  <div
-                    className={`flex items-start mb-6 ${
-                      isDark ? "text-gray-300" : "text-gray-600"
-                    }`}
-                  >
-                    <FaMapMarkerAlt className="mr-2 mt-1 text-[#FF6B00]" />
-                    <span>{featuredEvent.location}</span>
-                  </div>
-
-                  <div
-                    className={`mb-6 ${
-                      isDark ? "text-gray-300" : "text-gray-600"
-                    }`}
-                  >
-                    <p>{featuredEvent.description}</p>
-                  </div>
-                </div>
-
-                <button className="bg-gradient-to-r from-[#FF6B00] to-[#FF8533] hover:from-[#FF8533] hover:to-[#FF6B00] text-white py-4 px-8 rounded-xl transition-all duration-300 font-medium">
-                  Mais informações
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Event List */}
         <div>
           <div>
@@ -304,7 +163,7 @@ const Events = () => {
 
           {filteredEvents.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {regularEvents.map((event, index) => (
+              {filteredEvents.map((event) => (
                 <div
                   key={event.id}
                   className={`rounded-xl overflow-hidden transition-all duration-300 ${
@@ -313,29 +172,31 @@ const Events = () => {
                       : "bg-white border border-gray-100 shadow-md hover:shadow-xl"
                   } cursor-pointer`}
                 >
-                  <div className="h-48 overflow-hidden relative">
+                  <div className="h-96 overflow-hidden relative">
                     <img
                       src={event.image || "/event-placeholder.jpg"}
                       alt={event.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                       onError={(e) => {
-                        e.target.src = `https://source.unsplash.com/random/600x400/?church,event,${event.id}`;
+                        e.target.src = `https://source.unsplash.com/random/600x400/?church,worship,${event.id}`;
+                        e.target.onerror = null; // Prevent infinite loop if unsplash fails
                       }}
+                      loading="lazy"
                     />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                      aria-hidden="true"
+                    ></div>
                     <div className="absolute top-4 right-4">
-                      <span className="bg-[#FF6B00] text-white px-3 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-[#FF6B00] text-white px-3 py-1 rounded-full text-xs font-medium shadow-md">
                         {event.category}
                       </span>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <h3
-                      className={`text-xl font-bold mb-4 ${
-                        isDark ? "text-white" : "text-gray-800"
-                      }`}
-                    >
+                    <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white drop-shadow-lg">
                       {event.title}
                     </h3>
+                  </div>
+                  <div className="p-6">
                     <div className="mb-4 space-y-2">
                       <div
                         className={`flex items-center ${
