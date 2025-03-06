@@ -21,8 +21,8 @@ const Donations = () => {
     {
       icon: FaQrcode,
       title: "PIX",
-      info: "cristoliberta@oul.com.br",
-      copyValue: "cristoliberta@oul.com.br",
+      info: "cristoliberta@uol.com.br",
+      copyValue: "cristoliberta@uol.com.br",
       showCopy: true,
     },
   ];
