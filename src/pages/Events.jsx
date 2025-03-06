@@ -20,8 +20,8 @@ const Events = () => {
     {
       id: 1,
       title: "Culto de Mulheres",
-      date: "2025-03-29",
-      time: "18:00",
+      date: "2025-03-30",
+      time: "15:30",
       location: "Igreja Cristo Liberta",
       description:
         "Um culto especial para mulheres, cheio de fé, louvor e inspiração. Venha se fortalecer em Deus e em nossa união",
