@@ -16,19 +16,7 @@ const Events = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
 
   // Dados de exemplo para eventos
-  const events = [
-    {
-      id: 1,
-      title: "Culto de Mulheres",
-      date: "2025-03-30",
-      time: "15:30",
-      location: "Igreja Cristo Liberta",
-      description:
-        "Um culto especial para mulheres, cheio de fé, louvor e inspiração. Venha se fortalecer em Deus e em nossa união",
-      image: "https://i.postimg.cc/qMz6nLJJ/PHOTO-2025-03-02-16-56-26.jpg",
-      category: "Culto",
-    },
-  ];
+  const events = [];
 
   // Função para formatar a data no padrão brasileiro
   const formatDate = (dateString) => {
